@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "X8gZCxlhxNbaHfMr0Be4ZAkNBDDOJZPcNex3V0I7rcA=",
+  "Hash": "TohMgvfrfiCmXF16V06X09FK561lYqZXqJIQcwR/bXY=",
   "Source": "CafeCentral",
   "BasePath": "_content/CafeCentral",
   "Mode": "Default",
@@ -167,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\marmitaVegana.png"
+    },
+    {
+      "Identity": "C:\\Users\\rforb\\RiderProjects\\CafeCentral\\wwwroot\\images\\placeholder.png",
+      "SourceId": "CafeCentral",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rforb\\RiderProjects\\CafeCentral\\wwwroot\\",
+      "BasePath": "_content/CafeCentral",
+      "RelativePath": "images/placeholder.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\placeholder.png"
     },
     {
       "Identity": "C:\\Users\\rforb\\RiderProjects\\CafeCentral\\wwwroot\\js\\site.js",

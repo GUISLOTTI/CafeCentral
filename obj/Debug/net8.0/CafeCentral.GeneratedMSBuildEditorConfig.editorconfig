@@ -26,6 +26,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\rforb\RiderProjects\CafeCentral
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/rforb/RiderProjects/CafeCentral/Views/Cardapio/Carrinho.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZGFwaW9cQ2FycmluaG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rforb/RiderProjects/CafeCentral/Views/Cardapio/Detalhes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZGFwaW9cRGV0YWxoZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rforb/RiderProjects/CafeCentral/Views/Cardapio/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZGFwaW9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/rforb/RiderProjects/CafeCentral/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

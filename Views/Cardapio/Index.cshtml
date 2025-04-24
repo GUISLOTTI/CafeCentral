@@ -1,0 +1,87 @@
+﻿@model IEnumerable<CafeCentral.Models.Produto>
+
+@{
+ViewData["Title"] = "Nosso Cardápio";
+}
+
+<div class="container mt-4">
+    <!-- Título e Descrição -->
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h1 class="display-4 text-success">Nosso Cardápio</h1>
+            <p class="lead text-muted">Confira nosso cardápio de marmitas fitness e faça o seu pedido</p>
+        </div>
+    </div>
+
+    <!-- Alerta de Sucesso -->
+    @if (TempData["MensagemSucesso"] != null)
+    {
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="bi bi-check-circle-fill me-2"></i> @TempData["MensagemSucesso"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    }
+
+    <!-- Filtros de Categoria -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex flex-wrap justify-content-center">
+                <a asp-action="Index" class="btn @(string.IsNullOrEmpty(ViewBag.CategoriaAtual) ? "btn-success" : "btn-outline-success") m-1">Todos</a>
+                @foreach (var categoria in ViewBag.Categorias)
+                {
+                <a asp-action="Index" asp-route-categoria="@categoria"
+                   class="btn @(categoria.ToString() == ViewBag.CategoriaAtual ? "btn-success" : "btn-outline-success") m-1">@categoria</a>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Lista de Produtos -->
+    <div class="row">
+        @foreach (var item in Model)
+        {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                @if (!string.IsNullOrEmpty(item.ImagemUrl))
+                {
+                <img src="@item.ImagemUrl" class="card-img-top" alt="@item.Nome" style="height: 200px; object-fit: cover;">
+                }
+                else
+                {
+                <img src="/images/placeholder.jpg" class="card-img-top" alt="@item.Nome" style="height: 200px; object-fit: cover;">
+                }
+                <div class="card-body">
+                    <h5 class="card-title">@item.Nome</h5>
+                    <p class="card-text">@item.Descricao</p>
+                    <p class="card-text text-success fw-bold">R$ @item.Preco.ToString("F2")</p>
+
+                    <form asp-action="AdicionarAoCarrinho" method="post" class="d-flex">
+                        <input type="hidden" name="produtoId" value="@item.Id" />
+                        <input type="number" name="quantidade" value="1" min="1" max="10" class="form-control me-2" style="width: 80px;" />
+                        <button type="submit" class="btn btn-success flex-grow-1">
+                            <i class="bi bi-cart-plus"></i> Adicionar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+    <!-- Se não houver produtos -->
+    @if (!Model.Any())
+    {
+    <div class="alert alert-info" role="alert">
+        Nenhum produto encontrado nesta categoria.
+    </div>
+    }
+
+    <!-- Botão para carrinho -->
+    <div class="row mt-4 mb-5">
+        <div class="col-12 text-center">
+            <a asp-action="Carrinho" class="btn btn-lg btn-success">
+                <i class="bi bi-cart"></i> Ver Carrinho
+            </a>
+        </div>
+    </div>
+</div>

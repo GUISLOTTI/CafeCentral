@@ -18,8 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Cardapio\" />
     <Folder Include="Views\Pedido\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\Cardapio\Index.cshtml.cs" />
   </ItemGroup>
 
 </Project>

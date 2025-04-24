@@ -1,0 +1,115 @@
+@model IEnumerable<CafeCentral.Models.CarrinhoItem>
+
+@{
+ViewData["Title"] = "Carrinho de Compras";
+}
+
+<div class="container mt-4">
+    <h1 class="text-success text-center mb-4">Seu Carrinho</h1>
+
+    @if (TempData["MensagemErro"] != null)
+    {
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <i class="bi bi-exclamation-triangle-fill me-2"></i> @TempData["MensagemErro"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    }
+
+    @if (!Model.Any())
+    {
+    <div class="alert alert-info" role="alert">
+        <i class="bi bi-cart-x me-2"></i> Seu carrinho está vazio!
+    </div>
+    <div class="text-center mt-4">
+        <a asp-action="Index" class="btn btn-success btn-lg">
+            <i class="bi bi-arrow-left"></i> Voltar ao Cardápio
+        </a>
+    </div>
+    }
+    else
+    {
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Subtotal</th>
+                        <th>Ações</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                @if (!string.IsNullOrEmpty(item.ImagemUrl))
+                                {
+                                <img src="@item.ImagemUrl" alt="@item.Nome" class="img-thumbnail me-3" style="width: 60px; height: 60px; object-fit: cover;">
+                                }
+                                else
+                                {
+                                <img src="/images/placeholder.jpg" alt="@item.Nome" class="img-thumbnail me-3" style="width: 60px; height: 60px; object-fit: cover;">
+                                }
+                                <span>@item.Nome</span>
+                            </div>
+                        </td>
+                        <td>R$ @item.Preco.ToString("F2")</td>
+                        <td>
+                            <form asp-action="AtualizarCarrinho" method="post" class="d-flex align-items-center">
+                                <input type="hidden" name="produtoId" value="@item.ProdutoId" />
+                                <input type="number" name="quantidade" value="@item.Quantidade" min="1" max="10" class="form-control form-control-sm" style="width: 60px;" />
+                                <button type="submit" class="btn btn-sm btn-outline-success ms-2">
+                                    <i class="bi bi-arrow-repeat"></i>
+                                </button>
+                            </form>
+                        </td>
+                        <td>R$ @item.Subtotal.ToString("F2")</td>
+                        <td>
+                            <form asp-action="RemoverDoCarrinho" method="post">
+                                <input type="hidden" name="produtoId" value="@item.ProdutoId" />
+                                <button type="submit" class="btn btn-sm btn-outline-danger">
+                                    <i class="bi bi-trash"></i> Remover
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    }
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-end"><strong>Total:</strong></td>
+                        <td><strong class="text-success">R$ @ViewBag.Total.ToString("F2")</strong></td>
+                        <td></td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-12 d-flex justify-content-between">
+            <div>
+                <a asp-action="Index" class="btn btn-outline-success">
+                    <i class="bi bi-arrow-left"></i> Continuar Comprando
+                </a>
+                <form asp-action="LimparCarrinho" method="post" class="d-inline">
+                    <button type="submit" class="btn btn-outline-danger">
+                        <i class="bi bi-trash"></i> Limpar Carrinho
+                    </button>
+                </form>
+            </div>
+            <div>
+                <a asp-action="FinalizarPedido" class="btn btn-success btn-lg">
+                    <i class="bi bi-check2-circle"></i> Finalizar Pedido
+                </a>
+            </div>
+        </div>
+    </div>
+    }
+</div>

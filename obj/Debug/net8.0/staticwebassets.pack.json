@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\images\\marmitaVegana.png"
     },
     {
+      "Id": "C:\\Users\\rforb\\RiderProjects\\CafeCentral\\wwwroot\\images\\placeholder.png",
+      "PackagePath": "staticwebassets\\images\\placeholder.png"
+    },
+    {
       "Id": "C:\\Users\\rforb\\RiderProjects\\CafeCentral\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
