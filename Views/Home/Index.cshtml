@@ -1,8 +1,90 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = ViewBag.Title;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-4">
+
+    <div class="row py-5 text-center">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="display-4 text-success">@ViewBag.Title</h1>
+            <p class="lead text-muted mb-4">@ViewBag.Subtitle</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a asp-controller="Cardapio" asp-action="Index" class="btn btn-success btn-lg px-4 gap-3">Ver Cardápio</a>
+                <a asp-controller="Home" asp-action="About" class="btn btn-outline-success btn-lg px-4">Sobre Nós</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Benefícios -->
+    <div class="row mb-5">
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-success"><i class="bi bi-star-fill me-2"></i>Comida de Qualidade</h5>
+                    <p class="card-text">Utilizamos apenas ingredientes frescos e orgânicos, com opções para diferentes dietas e necessidades alimentares.</p>
+                    <p class="card-text">Nossos pratos são preparados por chefs especializados em nutrição.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-success"><i class="bi bi-currency-dollar me-2"></i>Economia</h5>
+                    <p class="card-text">Economize tempo e dinheiro com refeições prontas para consumo.</p>
+                    <p class="card-text">Preços acessíveis e excelente custo-benefício para seu dia a dia.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Destaques -->
+    <div class="row mb-5">
+        <div class="col-12 text-center mb-4">
+            <h2 class="text-success">Destaques do Cardápio</h2>
+            <p class="text-muted">Confira algumas de nossas marmitas mais populares</p>
+        </div>
+        
+        <!-- Placeholder para destaques de produtos -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="/images/marmitaFrango.png" class="card-img-top" alt="Frango Grelhado">
+                <div class="card-body">
+                    <h5 class="card-title">Frango Grelhado com Legumes</h5>
+                    <p class="card-text">Peito de frango grelhado com mix de legumes frescos.</p>
+                    <p class="card-text text-success fw-bold">R$ 21,90</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="/images/marmitaVegana.png" class="card-img-top" alt="Marmita Vegana">
+                <div class="card-body">
+                    <h5 class="card-title">Marmita Vegana</h5>
+                    <p class="card-text">Mix de legumes, grãos e tofu grelhado.</p>
+                    <p class="card-text text-success fw-bold">R$ 24,90</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="/images/marmitaSalmao.png" class="card-img-top" alt="Salmão Grelhado">
+                <div class="card-body">
+                    <h5 class="card-title">Salmão Grelhado</h5>
+                    <p class="card-text">Salmão grelhado com ervas, acompanha purê de batata doce.</p>
+                    <p class="card-text text-success fw-bold">R$ 32,90</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="row mb-5">
+        <div class="col-12 text-center p-5 bg-light rounded-3">
+            <h2 class="text-success mb-3">Pronto para experimentar?</h2>
+            <p class="lead mb-4">Faça seu pedido agora mesmo e receba em casa ou no trabalho.</p>
+            <a asp-controller="Cardapio" asp-action="Index" class="btn btn-success btn-lg px-4">Ver Cardápio Completo</a>
+        </div>
+    </div>
 </div>

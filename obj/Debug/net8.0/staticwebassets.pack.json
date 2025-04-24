@@ -13,6 +13,22 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\rforb\\RiderProjects\\CafeCentral\\wwwroot\\images\\cafe.png",
+      "PackagePath": "staticwebassets\\images\\cafe.png"
+    },
+    {
+      "Id": "C:\\Users\\rforb\\RiderProjects\\CafeCentral\\wwwroot\\images\\marmitaFrango.png",
+      "PackagePath": "staticwebassets\\images\\marmitaFrango.png"
+    },
+    {
+      "Id": "C:\\Users\\rforb\\RiderProjects\\CafeCentral\\wwwroot\\images\\marmitaSalmao.png",
+      "PackagePath": "staticwebassets\\images\\marmitaSalmao.png"
+    },
+    {
+      "Id": "C:\\Users\\rforb\\RiderProjects\\CafeCentral\\wwwroot\\images\\marmitaVegana.png",
+      "PackagePath": "staticwebassets\\images\\marmitaVegana.png"
+    },
+    {
       "Id": "C:\\Users\\rforb\\RiderProjects\\CafeCentral\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

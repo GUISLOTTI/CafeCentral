@@ -1,0 +1,58 @@
+﻿@{
+ViewData["Title"] = ViewBag.Title;
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h1 class="display-4 text-success text-center mb-4">@ViewBag.Title</h1>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Nossa Missão</h5>
+                    <p class="card-text">@ViewBag.Description</p>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Nossa História</h5>
+                    <p class="card-text">
+                        O Café Central nasceu em 2015 com o objetivo de trazer saúde e sabor à mesa dos brasileiros.
+                        Inicialmente como um pequeno negócio familiar, crescemos rapidamente devido à qualidade de
+                        nossas marmitas e ao compromisso com a satisfação dos clientes.
+                    </p>
+                    <p class="card-text">
+                        Hoje somos referência em alimentação saudável e continuamos com a mesma paixão do primeiro dia:
+                        oferecer refeições nutritivas, saborosas e com preço justo.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Nossos Valores</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong class="text-success">Qualidade:</strong> Trabalhamos apenas com ingredientes selecionados e frescos.
+                        </li>
+                        <li class="list-group-item">
+                            <strong class="text-success">Saúde:</strong> Todas as nossas refeições são balanceadas nutricionalmente.
+                        </li>
+                        <li class="list-group-item">
+                            <strong class="text-success">Sustentabilidade:</strong> Embalagens eco-friendly e processos sustentáveis.
+                        </li>
+                        <li class="list-group-item">
+                            <strong class="text-success">Acessibilidade:</strong> Preços justos para alimentação de qualidade.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a asp-controller="Cardapio" asp-action="Index" class="btn btn-success btn-lg me-2">Ver Cardápio</a>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-outline-success btn-lg">Voltar para Home</a>
+            </div>
+        </div>
+    </div>
+</div>

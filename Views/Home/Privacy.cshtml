@@ -1,6 +1,55 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Política de Privacidade";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h1 class="display-4 text-success text-center mb-4">@ViewData["Title"]</h1>
+            
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Coleta de Dados</h5>
+                    <p class="card-text">
+                        O Café Central coleta apenas as informações necessárias para processar pedidos e melhorar a experiência do cliente.
+                        Isso inclui nome, endereço, e-mail e telefone para contato e entrega.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Uso das Informações</h5>
+                    <p class="card-text">
+                        Utilizamos suas informações para processar pedidos, personalizar sua experiência
+                        e melhorar nossos serviços. Não compartilhamos seus dados com terceiros para fins de marketing.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Segurança</h5>
+                    <p class="card-text">
+                        Seus dados são protegidos por sistemas de segurança avançados e só são acessados
+                        por funcionários autorizados. Trabalhamos continuamente para garantir a integridade de suas informações.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Cookies</h5>
+                    <p class="card-text">
+                        Utilizamos cookies para melhorar sua experiência em nosso site. Eles ajudam a manter
+                        itens no carrinho, lembrar preferências e fornecer conteúdo relevante.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a asp-controller="Home" asp-action="Index" class="btn btn-outline-success btn-lg">Voltar para Home</a>
+            </div>
+        </div>
+    </div>
+</div>

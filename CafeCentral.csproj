@@ -20,7 +20,6 @@
   <ItemGroup>
     <Folder Include="Views\Cardapio\" />
     <Folder Include="Views\Pedido\" />
-    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
 </Project>
