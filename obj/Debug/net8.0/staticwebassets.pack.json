@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\images\\cafe.png"
     },
     {
+      "Id": "C:\\Users\\pc\\RiderProjects\\CafeCentral\\wwwroot\\images\\cafelogo.png",
+      "PackagePath": "staticwebassets\\images\\cafelogo.png"
+    },
+    {
       "Id": "C:\\Users\\pc\\RiderProjects\\CafeCentral\\wwwroot\\images\\carneMoidaComPure.png",
       "PackagePath": "staticwebassets\\images\\carneMoidaComPure.png"
     },

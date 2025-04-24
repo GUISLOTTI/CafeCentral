@@ -18,7 +18,6 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        // Podemos usar o ViewBag para passar dados simples para a view
         ViewBag.Title = "Marmitas Fitness de Qualidade";
         ViewBag.Subtitle = "Refeições saudáveis, saborosas e balanceadas para quem busca uma alimentação de qualidade no dia a dia";
         

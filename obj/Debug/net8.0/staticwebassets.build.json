@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Q5jc1hnf8OgtUM2F+NFNrU0T+7399aAgkoEXTmMfVew=",
+  "Hash": "62bGOTSUsihYXjzRZuBxS0cOU3o5PD6v74sEAEboqWg=",
   "Source": "CafeCentral",
   "BasePath": "_content/CafeCentral",
   "Mode": "Default",
@@ -120,6 +120,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\cafe.png"
+    },
+    {
+      "Identity": "C:\\Users\\pc\\RiderProjects\\CafeCentral\\wwwroot\\images\\cafelogo.png",
+      "SourceId": "CafeCentral",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pc\\RiderProjects\\CafeCentral\\wwwroot\\",
+      "BasePath": "_content/CafeCentral",
+      "RelativePath": "images/cafelogo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cpyf707gsd",
+      "Integrity": "kMsThkEUj+T736De1bkarb9DPlKWv0pW1q0aQxJXUTY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\cafelogo.png"
     },
     {
       "Identity": "C:\\Users\\pc\\RiderProjects\\CafeCentral\\wwwroot\\images\\carneMoidaComPure.png",
@@ -1874,6 +1895,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-ftIbIvRe05K6ANu9Wyw4VIXsbgXj/3HmMj4JXcYRHBw="
+        }
+      ]
+    },
+    {
+      "Route": "images/cafelogo.cpyf707gsd.png",
+      "AssetFile": "C:\\Users\\pc\\RiderProjects\\CafeCentral\\wwwroot\\images\\cafelogo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "60250"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kMsThkEUj+T736De1bkarb9DPlKWv0pW1q0aQxJXUTY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 24 Apr 2025 18:11:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cpyf707gsd"
+        },
+        {
+          "Name": "label",
+          "Value": "images/cafelogo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-kMsThkEUj+T736De1bkarb9DPlKWv0pW1q0aQxJXUTY="
+        }
+      ]
+    },
+    {
+      "Route": "images/cafelogo.png",
+      "AssetFile": "C:\\Users\\pc\\RiderProjects\\CafeCentral\\wwwroot\\images\\cafelogo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "60250"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kMsThkEUj+T736De1bkarb9DPlKWv0pW1q0aQxJXUTY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 24 Apr 2025 18:11:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kMsThkEUj+T736De1bkarb9DPlKWv0pW1q0aQxJXUTY="
         }
       ]
     },
