@@ -102,10 +102,10 @@ namespace CafeCentral.Controllers
         {
             // Obter carrinho da sessão
             var carrinho = HttpContext.Session.Get<List<CarrinhoItem>>(CarrinhoSessionKey) ?? new List<CarrinhoItem>();
-            
+
             // Calcular total
             ViewBag.Total = carrinho.Sum(i => i.Subtotal);
-            
+
             return View(carrinho);
         }
 
@@ -115,7 +115,7 @@ namespace CafeCentral.Controllers
         {
             // Obter carrinho da sessão
             var carrinho = HttpContext.Session.Get<List<CarrinhoItem>>(CarrinhoSessionKey) ?? new List<CarrinhoItem>();
-            
+
             // Remover item
             var item = carrinho.FirstOrDefault(c => c.ProdutoId == produtoId);
             if (item != null)
@@ -123,7 +123,7 @@ namespace CafeCentral.Controllers
                 carrinho.Remove(item);
                 HttpContext.Session.Set(CarrinhoSessionKey, carrinho);
             }
-            
+
             return RedirectToAction(nameof(Carrinho));
         }
 
@@ -133,7 +133,7 @@ namespace CafeCentral.Controllers
         {
             // Obter carrinho da sessão
             var carrinho = HttpContext.Session.Get<List<CarrinhoItem>>(CarrinhoSessionKey) ?? new List<CarrinhoItem>();
-            
+
             // Atualizar quantidade
             var item = carrinho.FirstOrDefault(c => c.ProdutoId == produtoId);
             if (item != null)
@@ -146,9 +146,10 @@ namespace CafeCentral.Controllers
                 {
                     item.Quantidade = quantidade;
                 }
+
                 HttpContext.Session.Set(CarrinhoSessionKey, carrinho);
             }
-            
+
             return RedirectToAction(nameof(Carrinho));
         }
 
@@ -163,19 +164,30 @@ namespace CafeCentral.Controllers
         [HttpGet]
         public IActionResult FinalizarPedido()
         {
-            // Verificar se há itens no carrinho
             var carrinho = HttpContext.Session.Get<List<CarrinhoItem>>(CarrinhoSessionKey) ?? new List<CarrinhoItem>();
+
             if (!carrinho.Any())
             {
                 TempData["MensagemErro"] = "Seu carrinho está vazio!";
                 return RedirectToAction(nameof(Carrinho));
             }
-            
-            // Calcular total
-            ViewBag.Total = carrinho.Sum(i => i.Subtotal);
-            ViewBag.Carrinho = carrinho;
-            
-            return RedirectToAction("FinalizarPedido", "Pedido");
+
+            decimal total = carrinho.Sum(i => i.Subtotal);
+
+            // Montar mensagem
+            var mensagem = "Olá, gostaria de finalizar meu pedido:\n";
+            foreach (var item in carrinho)
+            {
+                mensagem += $"- {item.Quantidade}x {item.Nome} (R${item.Preco:F2} cada)\n";
+            }
+
+            mensagem += $"Total: R${total:F2}";
+
+            // WhatsApp
+            string numeroWhatsapp = "5547996738906";
+            string urlWhatsapp = $"https://wa.me/{numeroWhatsapp}?text={Uri.EscapeDataString(mensagem)}";
+
+            return Redirect(urlWhatsapp);
         }
     }
 }

@@ -6375,23 +6375,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rforb\\.nuget\\packages\\": {},
+    "C:\\Users\\pc\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rforb\\RiderProjects\\CafeCentral\\CafeCentral.csproj",
+      "projectUniqueName": "C:\\Users\\pc\\RiderProjects\\CafeCentral\\CafeCentral.csproj",
       "projectName": "CafeCentral",
-      "projectPath": "C:\\Users\\rforb\\RiderProjects\\CafeCentral\\CafeCentral.csproj",
-      "packagesPath": "C:\\Users\\rforb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rforb\\RiderProjects\\CafeCentral\\obj\\",
+      "projectPath": "C:\\Users\\pc\\RiderProjects\\CafeCentral\\CafeCentral.csproj",
+      "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pc\\RiderProjects\\CafeCentral\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\rforb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6466,7 +6466,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
