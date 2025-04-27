@@ -26,9 +26,9 @@ namespace CafeCentral.Models
         [Required]
         [StringLength(50)]
         [Display(Name = "Forma de Pagamento")]
-        public string FormaPagamento { get; set; }
+        public required string FormaPagamento { get; set; }
         
-        public virtual Cliente Cliente { get; set; }
+        public virtual Cliente? Cliente { get; set; }
         public virtual ICollection<ItemPedido> ItensPedido { get; set; } = new List<ItemPedido>();
     }
 }

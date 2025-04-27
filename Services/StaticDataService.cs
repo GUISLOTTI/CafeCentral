@@ -68,7 +68,7 @@ namespace CafeCentral.Services
             }
         };
 
-        public static List<string> GetCategorias()
+        public static List<string?> GetCategorias()
         {
             return Produtos.Select(p => p.Categoria).Distinct().ToList();
         }

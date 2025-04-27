@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "buildCommand": "dotnet publish -c Release -o publish",
+  "outputDirectory": "publish/wwwroot",
+  "framework": {
+    "version": "8.0"
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/api/server.js"
+    }
+  ],
+  "functions": {
+    "api/server.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  }
+}

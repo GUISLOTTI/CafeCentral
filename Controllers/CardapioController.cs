@@ -16,7 +16,7 @@ namespace CafeCentral.Controllers
         }
 
         
-        public IActionResult Index(string categoria = null)
+        public IActionResult Index(string? categoria = null)
         {
             ViewBag.Categorias = StaticDataService.GetCategorias();
             
