@@ -44,11 +44,11 @@ ViewData["Title"] = "Nosso Cardápio";
             <div class="card h-100 shadow-sm">
                 @if (!string.IsNullOrEmpty(item.ImagemUrl))
                 {
-                <img src="@item.ImagemUrl" class="card-img-top" alt="@item.Nome" style="height: 200px; object-fit: cover;">
+                <img src="/images/marmitasSortidas.png" class="card-img-top" alt="@item.Nome" style="height: 200px; object-fit: cover;">
                 }
                 else
                 {
-                <img src="/images/placeholder.png" class="card-img-top" alt="@item.Nome" style="height: 200px; object-fit: cover;">
+                <img src="/images/marmitaVegana.png" class="card-img-top" alt="@item.Nome" style="height: 200px; object-fit: cover;">
                 }
                 <div class="card-body">
                     <h5 class="card-title">@item.Nome</h5>

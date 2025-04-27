@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "62bGOTSUsihYXjzRZuBxS0cOU3o5PD6v74sEAEboqWg=",
+  "Hash": "QAMP1bP/97Wse/xtd4FyTfVASg3iDa4XNcXQqssvmbw=",
   "Source": "CafeCentral",
   "BasePath": "_content/CafeCentral",
   "Mode": "Default",
@@ -225,6 +225,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\marmitaSalmao.png"
+    },
+    {
+      "Identity": "C:\\Users\\pc\\RiderProjects\\CafeCentral\\wwwroot\\images\\marmitasSortidas.png",
+      "SourceId": "CafeCentral",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pc\\RiderProjects\\CafeCentral\\wwwroot\\",
+      "BasePath": "_content/CafeCentral",
+      "RelativePath": "images/marmitasSortidas#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "33dti3b7zd",
+      "Integrity": "f5XSGGGWLl4n2Vg4Q862GMdv/SDjU9BiDShKb3Y5DJ0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\marmitasSortidas.png"
     },
     {
       "Identity": "C:\\Users\\pc\\RiderProjects\\CafeCentral\\wwwroot\\images\\marmitaVegana.png",
@@ -2305,6 +2326,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-+8XXsAOVCTiV0lpZpRcNrOh/cAJAwiCkSuLo+8vf3XA="
+        }
+      ]
+    },
+    {
+      "Route": "images/marmitasSortidas.33dti3b7zd.png",
+      "AssetFile": "C:\\Users\\pc\\RiderProjects\\CafeCentral\\wwwroot\\images\\marmitasSortidas.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1327486"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"f5XSGGGWLl4n2Vg4Q862GMdv/SDjU9BiDShKb3Y5DJ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 01:20:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "33dti3b7zd"
+        },
+        {
+          "Name": "label",
+          "Value": "images/marmitasSortidas.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-f5XSGGGWLl4n2Vg4Q862GMdv/SDjU9BiDShKb3Y5DJ0="
+        }
+      ]
+    },
+    {
+      "Route": "images/marmitasSortidas.png",
+      "AssetFile": "C:\\Users\\pc\\RiderProjects\\CafeCentral\\wwwroot\\images\\marmitasSortidas.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1327486"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"f5XSGGGWLl4n2Vg4Q862GMdv/SDjU9BiDShKb3Y5DJ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 01:20:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-f5XSGGGWLl4n2Vg4Q862GMdv/SDjU9BiDShKb3Y5DJ0="
         }
       ]
     },

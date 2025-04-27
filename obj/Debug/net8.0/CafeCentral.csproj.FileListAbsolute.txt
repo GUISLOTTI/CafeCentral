@@ -256,10 +256,6 @@ C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\Microsoft.CodeAnalysis.Sc
 C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
 C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\Microsoft.DiaSymReader.dll
 C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\Microsoft.DotNet.Scaffolding.Shared.dll
-C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\Microsoft.NET.StringTools.dll
 C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
@@ -272,8 +268,6 @@ C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\Microsoft.VisualStudio.We
 C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\Mono.TextTemplating.dll
 C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\Newtonsoft.Json.dll
-C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\Npgsql.dll
-C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\NuGet.Common.dll
 C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\NuGet.Configuration.dll
 C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\NuGet.DependencyResolver.Core.dll
@@ -465,3 +459,4 @@ C:\Users\pc\RiderProjects\CafeCentral\obj\Debug\net8.0\refint\CafeCentral.dll
 C:\Users\pc\RiderProjects\CafeCentral\obj\Debug\net8.0\CafeCentral.pdb
 C:\Users\pc\RiderProjects\CafeCentral\obj\Debug\net8.0\CafeCentral.genruntimeconfig.cache
 C:\Users\pc\RiderProjects\CafeCentral\obj\Debug\net8.0\ref\CafeCentral.dll
+C:\Users\pc\RiderProjects\CafeCentral\bin\Debug\net8.0\vercel.json

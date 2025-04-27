@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\images\\marmitaVegana.png"
     },
     {
+      "Id": "C:\\Users\\pc\\RiderProjects\\CafeCentral\\wwwroot\\images\\marmitasSortidas.png",
+      "PackagePath": "staticwebassets\\images\\marmitasSortidas.png"
+    },
+    {
       "Id": "C:\\Users\\pc\\RiderProjects\\CafeCentral\\wwwroot\\images\\placeholder.png",
       "PackagePath": "staticwebassets\\images\\placeholder.png"
     },

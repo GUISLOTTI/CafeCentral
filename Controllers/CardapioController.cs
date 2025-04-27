@@ -1,52 +1,44 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using CafeCentral.Data;
 using CafeCentral.Models;
 using CafeCentral.Extensions;
+using CafeCentral.Services;
 
 namespace CafeCentral.Controllers
 {
     public class CardapioController : Controller
     {
-        private readonly ApplicationDbContext _context;
         private readonly ILogger<CardapioController> _logger;
         private const string CarrinhoSessionKey = "Carrinho";
 
-        public CardapioController(ApplicationDbContext context, ILogger<CardapioController> logger)
+        public CardapioController(ILogger<CardapioController> logger)
         {
-            _context = context;
             _logger = logger;
         }
 
-        // GET: Cardapio
-        public async Task<IActionResult> Index(string categoria = null)
+        
+        public IActionResult Index(string categoria = null)
         {
-            ViewBag.Categorias = await _context.Produtos
-                .Select(p => p.Categoria)
-                .Distinct()
-                .ToListAsync();
-
-            var produtos = _context.Produtos.Where(p => p.Disponivel);
-
+            ViewBag.Categorias = StaticDataService.GetCategorias();
+            
+            var produtos = StaticDataService.GetProdutosByCategoria(categoria);
+            
             if (!string.IsNullOrEmpty(categoria))
             {
-                produtos = produtos.Where(p => p.Categoria == categoria);
                 ViewBag.CategoriaAtual = categoria;
             }
 
-            return View(await produtos.ToListAsync());
+            return View(produtos);
         }
 
-        // GET: Cardapio/Detalhes/5
-        public async Task<IActionResult> Detalhes(int? id)
+        
+        public IActionResult Detalhes(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var produto = await _context.Produtos
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var produto = StaticDataService.GetProdutoById(id.Value);
             if (produto == null)
             {
                 return NotFound();
@@ -55,30 +47,30 @@ namespace CafeCentral.Controllers
             return View(produto);
         }
 
-        // POST: Cardapio/AdicionarAoCarrinho
+        
         [HttpPost]
         public IActionResult AdicionarAoCarrinho(int produtoId, int quantidade = 1)
         {
-            // Buscar produto no banco
-            var produto = _context.Produtos.Find(produtoId);
+            
+            var produto = StaticDataService.GetProdutoById(produtoId);
             if (produto == null)
             {
                 return NotFound();
             }
 
-            // Obter carrinho da sessão ou criar um novo
+            
             var carrinho = HttpContext.Session.Get<List<CarrinhoItem>>(CarrinhoSessionKey) ?? new List<CarrinhoItem>();
 
-            // Verificar se o produto já está no carrinho
+            
             var item = carrinho.FirstOrDefault(c => c.ProdutoId == produtoId);
             if (item != null)
             {
-                // Incrementar quantidade
+                
                 item.Quantidade += quantidade;
             }
             else
             {
-                // Adicionar novo item
+                
                 carrinho.Add(new CarrinhoItem
                 {
                     ProdutoId = produto.Id,
@@ -87,36 +79,43 @@ namespace CafeCentral.Controllers
                     Quantidade = quantidade,
                     ImagemUrl = produto.ImagemUrl ?? "/images/placeholder.jpg"
                 });
-            }
+            
 
-            // Salvar carrinho na sessão
+        
             HttpContext.Session.Set(CarrinhoSessionKey, carrinho);
 
-            // Redirecionar para o carrinho ou continuar comprando
+            
+            TempData["MensagemSucesso"] = $"{produto.Nome} adicionado ao carrinho!";
+            return RedirectToAction(nameof(Index));
+        }
+      
+            HttpContext.Session.Set(CarrinhoSessionKey, carrinho);
+
+            
             TempData["MensagemSucesso"] = $"{produto.Nome} adicionado ao carrinho!";
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: Cardapio/Carrinho
+        
         public IActionResult Carrinho()
         {
-            // Obter carrinho da sessão
+            
             var carrinho = HttpContext.Session.Get<List<CarrinhoItem>>(CarrinhoSessionKey) ?? new List<CarrinhoItem>();
 
-            // Calcular total
+            
             ViewBag.Total = carrinho.Sum(i => i.Subtotal);
 
             return View(carrinho);
         }
 
-        // POST: Cardapio/RemoverDoCarrinho/5
+        
         [HttpPost]
         public IActionResult RemoverDoCarrinho(int produtoId)
         {
-            // Obter carrinho da sessão
+            
             var carrinho = HttpContext.Session.Get<List<CarrinhoItem>>(CarrinhoSessionKey) ?? new List<CarrinhoItem>();
 
-            // Remover item
+            
             var item = carrinho.FirstOrDefault(c => c.ProdutoId == produtoId);
             if (item != null)
             {
@@ -127,14 +126,14 @@ namespace CafeCentral.Controllers
             return RedirectToAction(nameof(Carrinho));
         }
 
-        // POST: Cardapio/AtualizarCarrinho
+        
         [HttpPost]
         public IActionResult AtualizarCarrinho(int produtoId, int quantidade)
         {
-            // Obter carrinho da sessão
+            
             var carrinho = HttpContext.Session.Get<List<CarrinhoItem>>(CarrinhoSessionKey) ?? new List<CarrinhoItem>();
 
-            // Atualizar quantidade
+            
             var item = carrinho.FirstOrDefault(c => c.ProdutoId == produtoId);
             if (item != null)
             {
@@ -153,7 +152,7 @@ namespace CafeCentral.Controllers
             return RedirectToAction(nameof(Carrinho));
         }
 
-        // POST: Cardapio/LimparCarrinho
+        
         [HttpPost]
         public IActionResult LimparCarrinho()
         {
@@ -174,7 +173,7 @@ namespace CafeCentral.Controllers
 
             decimal total = carrinho.Sum(i => i.Subtotal);
 
-            // Montar mensagem
+            
             var mensagem = "Olá, gostaria de finalizar meu pedido:\n";
             foreach (var item in carrinho)
             {
@@ -183,9 +182,9 @@ namespace CafeCentral.Controllers
 
             mensagem += $"Total: R${total:F2}";
 
-            // WhatsApp
+            
             string numeroWhatsapp = "5547996738906";
-            string urlWhatsapp = $"https://wa.me/{numeroWhatsapp}?text={Uri.EscapeDataString(mensagem)}";
+            string urlWhatsapp = $"https://wa.me/{numeroWhatsapp}";
 
             return Redirect(urlWhatsapp);
         }
